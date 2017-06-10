@@ -3,41 +3,42 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
-        <meta charset="utf-8" /> 
-        <script src="calculator.js"></script>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+        <script type="text/javascript" src="calculator.js"></script>
         <title>
             Simple JavaScript Calculator
         </title>
     </head>
 
     <body>
-        <div id="calculator">
-            <input id="screen" type="text" name="screen" disabled>
+        <div id="calculator" name=calculator>
+            <input id="screen" type="text" name="screen" readonly>
             <br>
             <div id="keypad">
-                <button id="converter" name="clear_screen">C</button>
+                <button id="clearscreen">C</button>
                 <button id="converter" name="plus_minus">+/-</button>
-                <button id="converter" name="percentage">%</button>
-                <button id="operator" name="divide">/</button>
+                <button id="converter" name="percentage" onclick="getPercentage()">%</button>
+                <button id="operator" name="divide" onclick="displayOnScreen('/')">/</button>
                 <br>
-                <button id="number" name="number7">7</button>
-                <button id="number" name="number8">8</button>
-                <button id="number" name="number9">9</button>
-                <button id="operator" name="multiply">*</button>
+                <button id="number" name="number7" onclick="displayOnScreen(7)">7</button>
+                <button id="number" name="number8" onclick="displayOnScreen(8)">8</button>
+                <button id="number" name="number9" onclick="displayOnScreen(9)">9</button>
+                <button id="operator" name="multiply" onclick="displayOnScreen('*')">*</button>
                 <br>
-                <button id="number" name="number4">4</button>
-                <button id="number" name="number5">5</button>
-                <button id="number" name="number6">6</button>
-                <button id="operator" name="subtract">-</button>
+                <button id="number" name="number4" onclick="displayOnScreen(4)">4</button>
+                <button id="number" name="number5" onclick="displayOnScreen(5)">5</button>
+                <button id="number" name="number6" onclick="displayOnScreen(6)">6</button>
+                <button id="subtract" name="subtract" onclick="displayOnScreen('-')">-</button>
                 <br>
-                <button id="number" name="number1">1</button>
-                <button id="number" name="number2">2</button>
-                <button id="number" name="number3">3</button>
-                <button id="operator" name="add">+</button>
+                <button id="number" name="number1" onclick="displayOnScreen(1)">1</button>
+                <button id="number" name="number2"onclick="displayOnScreen(2)">2</button>
+                <button id="number" name="number3" onclick="displayOnScreen(3)">3</button>
+                <button id="operator" name="add" onclick="displayOnScreen('+')">+</button>
                 <br>
-                <button id="number" name="number0">0</button>
-                <button id="number" name="dot">.</button>
-                <button id="operator" name="equal">=</button>
+                <button id="number" name="number0" onclick="displayOnScreen(0)">0</button>
+                <button id="number" name="dot" onclick="displayOnScreen('.')">.</button>
+                <button id="equal" name="equal" onclick="getResult()";>=</button>
                 <br>
             </div>
         </div>
